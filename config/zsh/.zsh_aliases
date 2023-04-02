@@ -1,0 +1,36 @@
+# improve ls
+LS_OPTS="-FXpq --color=auto --time-style=iso --group-directories-first"
+alias ls="ls $LS_OPTS"
+alias ll="ls $LS_OPTS -clAH --size"
+
+# add colors to program output
+alias grep='grep --color=auto'
+
+# editor shortcut
+alias e="$EDITOR"
+
+# git
+alias g="git"
+
+# system controls
+alias s="systemctl"
+alias j="journalctl -xe"
+
+# fix calendar
+alias cal="cal -m"
+
+# verbose rm
+alias rm="rm -v"
+
+# navigation
+alias p="pushd"
+alias po="popd"
+
+# better less
+alias less="less -cSR"
+
+# refresh sudo on use
+alias sudo="sudo -v; sudo "
+
+# print file size
+pfsize() { stat --printf '%n: %s\n' $@ | numfmt -d ' ' --field 2 --to iec }
